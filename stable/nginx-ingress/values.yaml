@@ -239,6 +239,12 @@ controller:
 
     healthCheckNodePort: 0
 
+    ## Configure LB session Affinity (None | ClientIP)
+    ## Helps to enable Session resumption (caching) by making sure user connection gets to the same ingress pod every time
+    sessionAffinity: "None"
+    sessionAffinityConfig: {}
+    #  clientIP.timeoutSeconds: 10800
+
     ports:
       http: 80
       https: 443
